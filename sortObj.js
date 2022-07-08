@@ -21,12 +21,12 @@ let people = [
 		age: 60,
 	},
 	{
-		firstName: "Derrick",
+		firstName: "Alex",
 		lastName: "Reese",
 		age: 62,
 	},
 	{
-		firstName: "Janie",
+		firstName: "Allan",
 		lastName: "Jensen",
 		age: 50,
 	},
@@ -64,7 +64,7 @@ const peopleSorted = people.sort((a, b) => {
 		}
 		return compare(a.lastName, b.lastName);
 	}
-	return compare(a.firstName, b.firstName);
+	return a.firstName.localeCompare(b.firstName);
 });
 
 function compare(a, b) {
