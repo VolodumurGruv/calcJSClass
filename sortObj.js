@@ -58,8 +58,8 @@ let people = [
 ];
 
 const peopleSorted = people.sort((a, b) => {
-	if (a.firstName === b.firstName) {
-		if (a.lastName === b.lastName) {
+	if (a.firstName.toLowerCase() === b.firstName.toLowerCase()) {
+		if (a.lastName.toLowerCase() === b.lastName.toLowerCase()) {
 			return compare(a.age, b.age);
 		}
 		return compare(a.lastName, b.lastName);
@@ -68,6 +68,10 @@ const peopleSorted = people.sort((a, b) => {
 });
 
 function compare(a, b) {
+	if (typeof a === "string" && typeof b === "string") {
+		a = a.toLowerCase();
+		b = b.toLowerCase();
+	}
 	if (a < b) {
 		return -1;
 	}
